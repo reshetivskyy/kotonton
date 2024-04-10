@@ -20,7 +20,7 @@ const Play = ({ chatId }) => {
                 score,
             }
         );
-        setHighScore(JSON.stringify(data.data));
+        setHighScore(data.data.best_score);
     };
 
     const handleFinished = () => {
@@ -45,7 +45,6 @@ const Play = ({ chatId }) => {
     return (
         <section>
             <div className="container">
-                {chatId}
                 {isPlay ? (
                     <Game
                         score={score}
