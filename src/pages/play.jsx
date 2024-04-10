@@ -13,10 +13,16 @@ const Play = ({ chatId }) => {
     const [mode, setMode] = useState(false);
 
     const getHighScore = async () => {
-        const data = await axios.post("http://kotbotapi-5a61261d58d9.herokuapp.com/api/setScore", {
-            chatId,
-            score,
-        });
+        const data = await axios.post(
+            "http://kotbotapi-5a61261d58d9.herokuapp.com/api/setScore",
+            {
+                chatId,
+                score,
+            },
+            {
+                "Content-Type": "application/json",
+            }
+        );
         setHighScore(data.data.best_score);
     };
 

@@ -10,6 +10,9 @@ const LeaderBoard = ({ chatId }) => {
                 "http://kotbotapi-5a61261d58d9.herokuapp.com/api/getScoreBoard",
                 {
                     limit: 10,
+                },
+                {
+                    "Content-Type": "application/json",
                 }
             );
             setLeaderBoard(data.data.leaderboard);
