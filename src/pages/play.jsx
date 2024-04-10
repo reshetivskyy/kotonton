@@ -45,6 +45,7 @@ const Play = ({ chatId }) => {
     return (
         <section>
             <div className="container">
+                {chatId}
                 {isPlay ? (
                     <Game
                         score={score}
