@@ -18,12 +18,9 @@ const Play = ({ chatId }) => {
             {
                 chatId,
                 score,
-            },
-            {
-                "Content-Type": "application/json",
             }
         );
-        setHighScore(data.data.best_score);
+        setHighScore(JSON.stringify(data.data));
     };
 
     const handleFinished = () => {
