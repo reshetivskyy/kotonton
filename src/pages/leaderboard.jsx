@@ -10,9 +10,6 @@ const LeaderBoard = ({ chatId }) => {
                 "http://kotbotapi-5a61261d58d9.herokuapp.com/api/getScoreBoard",
                 {
                     limit: 10,
-                },
-                {
-                    "Content-Type": "application/json",
                 }
             );
             setLeaderBoard(data.data.leaderboard);
@@ -25,7 +22,7 @@ const LeaderBoard = ({ chatId }) => {
             <div className="container">
                 <p className="title">leaderboard</p>
                 <p className="text">the best 100 users will get $kot airdrop</p>
-                {leaderBoard && (
+                {leaderBoard ? (
                     <div className="leaderboard">
                         {leaderBoard.map((user, i) => {
                             return (
@@ -45,6 +42,8 @@ const LeaderBoard = ({ chatId }) => {
                             );
                         })}
                     </div>
+                ) : (
+                    <p className="text">No one in leaderboard</p>
                 )}
             </div>
         </section>

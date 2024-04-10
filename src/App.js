@@ -10,7 +10,8 @@ import "./style.css";
 
 function App() {
     const [initDataUnsafe] = useInitData();
-    const chatId = initDataUnsafe.user.id;
+    // const chatId = initDataUnsafe.user.id;
+    const chatId = 123;
 
     return (
         <div className="App" style={{ position: "relative", height: "100vh" }}>
