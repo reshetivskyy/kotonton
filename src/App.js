@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-// import { useInitData } from "@vkruglikov/react-telegram-web-app";
+import { useInitData } from "@vkruglikov/react-telegram-web-app";
 
 import Home from "./pages/home";
 import Play from "./pages/play";
@@ -9,9 +9,8 @@ import LeaderBoard from "./pages/leaderboard";
 import "./style.css";
 
 function App() {
-    // const [initDataUnsafe] = useInitData();
-    // const chatId = initDataUnsafe.user.id;
-    const chatId = 5375566926;
+    const [initDataUnsafe] = useInitData();
+    const chatId = initDataUnsafe.user.id
 
     return (
         <div className="App" style={{ position: "relative", height: "100vh" }}>
