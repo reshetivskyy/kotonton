@@ -3,39 +3,39 @@ import { useNavigate } from "react-router-dom";
 
 import Item from "../Item";
 
-import btc from "../../img/coins/0xbtc.svg";
-import inch from "../../img/coins/1inch.svg";
-import ada from "../../img/coins/ada.svg";
-import ape from "../../img/coins/ape.svg";
-import doge from "../../img/coins/doge.svg";
-import ltc from "../../img/coins/ltc.svg";
-import sand from "../../img/coins/sand.svg";
-import usdc from "../../img/coins/usdc.svg";
-import usdt from "../../img/coins/usdt.svg";
-import xmr from "../../img/coins/xmr.svg";
-import xrp from "../../img/coins/xrp.svg";
+import btc from "../../img/coins/02.png";
+import eth from "../../img/coins/03.png";
+import doge from "../../img/coins/04.png";
+import usdt from "../../img/coins/05.png";
+import xrp from "../../img/coins/06.png";
+import ltc from "../../img/coins/07.png";
+import not from "../../img/coins/08.png";
+import ton from "../../img/coins/09.png";
+import ape from "../../img/coins/11.png";
+import sol from "../../img/coins/13.png";
+import xmr from "../../img/coins/14.png";
 import kot from "../../img/coins/kot.png";
+import goldkot from "../../img/coins/goldkot.png";
 
 const coins = [
     btc,
-    kot,
-    inch,
-    kot,
-    ada,
-    ape,
+    eth,
     doge,
-    ltc,
-    sand,
-    kot,
-    usdc,
     usdt,
-    xmr,
     xrp,
+    ltc,
+    not,
+    ton,
+    ape,
+    sol,
+    xmr,
+    kot,
+    goldkot,
 ];
 const windowHeight = window.innerHeight;
 const windowWidth = window.innerWidth;
 
-const Game = ({ handlePlusScore, score, handleFinished, handleDefeat }) => {
+const Game = ({ setScore, score, handleFinished, handleDefeat }) => {
     const [fallingCoins, setFallingCoins] = useState([]);
     const navigate = useNavigate();
 
@@ -92,14 +92,16 @@ const Game = ({ handlePlusScore, score, handleFinished, handleDefeat }) => {
         }, fallInterval);
 
         return () => clearInterval(updateInterval);
-    }, [fallStep, fallingCoins, navigate, score, handleDefeat]);
+    }, [navigate, score, handleDefeat]);
 
     const handleCoinClick = (id) => {
         setFallingCoins((prevObjects) => {
             const updatedObjects = prevObjects.filter((obj) => obj.id !== id);
             const clickedCoin = prevObjects.find((obj) => obj.id === id);
             if (clickedCoin && clickedCoin.src === kot) {
-                handlePlusScore();
+                setScore((prevScore) => prevScore + 1);
+            } else if (clickedCoin && clickedCoin.src === goldkot) {
+                setScore((prevScore) => prevScore + 5);
             } else {
                 handleDefeat();
             }

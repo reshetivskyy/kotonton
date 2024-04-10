@@ -36,9 +36,7 @@ const LeaderBoard = ({ chatId }) => {
                                         <span className="leaderboard__address">
                                             {user.address}
                                         </span>
-                                        <span>
-                                            {user.game_score + user.referrals}
-                                        </span>
+                                        <span>{user.game_score}</span>
                                     </p>
                                 </div>
                             );

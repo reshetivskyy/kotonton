@@ -32,10 +32,6 @@ const Play = ({ chatId }) => {
         setIsPlay(false);
     };
 
-    const handlePlusScore = () => {
-        setScore(score + 1);
-    };
-
     const handlePlayAgain = () => {
         setMode(false);
         setScore(0);
@@ -49,7 +45,7 @@ const Play = ({ chatId }) => {
                 {isPlay ? (
                     <Game
                         score={score}
-                        handlePlusScore={handlePlusScore}
+                        setScore={setScore}
                         handleFinished={handleFinished}
                         handleDefeat={handleDefeat}
                     />
