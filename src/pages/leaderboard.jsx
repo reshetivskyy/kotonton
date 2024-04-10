@@ -22,6 +22,7 @@ const LeaderBoard = ({ chatId }) => {
             <div className="container">
                 <p className="title">leaderboard</p>
                 <p className="text">the best 100 users will get $kot airdrop</p>
+                {JSON.stringify(leaderBoard)}
                 {leaderBoard ? (
                     <div className="leaderboard">
                         {leaderBoard.map((user, i) => {
