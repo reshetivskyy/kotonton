@@ -9,8 +9,9 @@ import LeaderBoard from "./pages/leaderboard";
 import "./style.css";
 
 function App() {
-    const [initDataUnsafe] = useInitData();
-    const chatId = initDataUnsafe.user.id;
+    // const [initDataUnsafe] = useInitData();
+    // const chatId = initDataUnsafe.user.id;
+    const chatId = 5375566926;
 
     return (
         <div className="App" style={{ position: "relative", height: "100vh" }}>

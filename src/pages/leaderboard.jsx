@@ -6,13 +6,16 @@ const LeaderBoard = ({ chatId }) => {
 
     useEffect(() => {
         const fetchData = async () => {
-            const data = await axios.post(
-                "http://kotbotapi-5a61261d58d9.herokuapp.com/api/getScoreBoard",
-                {
-                    limit: 10,
-                }
-            );
-            setLeaderBoard(data.data.leaderboard);
+            const data = await axios
+                .post(
+                    "http://kotbotapi-5a61261d58d9.herokuapp.com/api/getScoreBoard",
+                    {
+                        limit: 10,
+                    }
+                )
+                .then((response) => response.data);
+            // .catch((e) => setLeaderBoard(e));
+            setLeaderBoard(data.leaderboard);
         };
         fetchData();
     }, []);
@@ -22,8 +25,7 @@ const LeaderBoard = ({ chatId }) => {
             <div className="container">
                 <p className="title">leaderboard</p>
                 <p className="text">the best 100 users will get $kot airdrop</p>
-                {leaderBoard && JSON.stringify(leaderBoard)}
-                {leaderBoard ? (
+                {/* {leaderBoard ? (
                     <div className="leaderboard">
                         {leaderBoard.map((user, i) => {
                             return (
@@ -45,7 +47,8 @@ const LeaderBoard = ({ chatId }) => {
                     </div>
                 ) : (
                     <p className="text">No one in leaderboard</p>
-                )}
+                )} */}
+                {leaderBoard && JSON.stringify(leaderBoard)}
             </div>
         </section>
     );
