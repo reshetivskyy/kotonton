@@ -15,9 +15,9 @@ const LeaderBoard = ({ chatId }) => {
                 )
                 .then((response) => response.data);
             // .catch((e) => setLeaderBoard(e));
-            setLeaderBoard(data.leaderboard);
         };
         fetchData();
+        setLeaderBoard(data.leaderboard);
     }, []);
 
     return (
