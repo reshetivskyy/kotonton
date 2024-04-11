@@ -14,7 +14,7 @@ const Play = ({ chatId }) => {
 
     const getHighScore = async () => {
         const data = await axios.post(
-            "http://kotbotapi-5a61261d58d9.herokuapp.com/api/setScore",
+            "https://kotbotapi-5a61261d58d9.herokuapp.com/api/setScore",
             {
                 chatId,
                 score,

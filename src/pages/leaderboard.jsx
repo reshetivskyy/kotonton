@@ -8,7 +8,7 @@ const LeaderBoard = ({ chatId }) => {
         const fetchData = async () => {
             const data = await axios
                 .post(
-                    "http://kotbotapi-5a61261d58d9.herokuapp.com/api/getScoreBoard",
+                    "https://kotbotapi-5a61261d58d9.herokuapp.com/api/getScoreBoard",
                     {
                         limit: 10,
                     }
